@@ -7,6 +7,7 @@ import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.Callback;
 
 import android.media.Ringtone;
+import android.net.Uri;
 import android.media.RingtoneManager;
 
 public class RNRingtoneModule extends ReactContextBaseJavaModule {
@@ -27,7 +28,7 @@ public class RNRingtoneModule extends ReactContextBaseJavaModule {
   @ReactMethod
   public void playRingtone() {
     Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_RINGTONE);
-    ringtone = RingtoneManager.getRingtone(getApplicationContext(), notification);
+    ringtone = RingtoneManager.getRingtone(reactContext, notification);
     ringtone.play();
   }
 
