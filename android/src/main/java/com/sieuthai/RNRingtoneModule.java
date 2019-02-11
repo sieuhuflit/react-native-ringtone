@@ -29,7 +29,7 @@ public class RNRingtoneModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
-  public void playRingtone() {
+  public void play() {
 
     audioManager = (AudioManager) reactContext.getSystemService(Context.AUDIO_SERVICE);
     audioManager.setSpeakerphoneOn(true);
@@ -40,7 +40,7 @@ public class RNRingtoneModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
-  public void stopRingtone() {
+  public void stop() {
     if (ringtone != null && ringtone.isPlaying()) {
         ringtone.stop();
         ringtone = null;
